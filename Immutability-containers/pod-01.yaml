@@ -7,7 +7,12 @@ spec:
     - name: c1
       image: redhat/ubi9
       command: ["sleep","1h"]
-      securityContext:
-        privileged: false
-        allowPrivilegeEscalation: false
+      volumeMounts:
+        - name: sample
+          mountPath: /data
+  volumes:
+    - name: sample
+      hostPath:
+        path: /
+
 
