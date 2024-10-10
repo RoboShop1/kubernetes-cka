@@ -7,4 +7,5 @@ spec:
     - name: c1
       image: redhat/ubi9
       command: ["sleep","1h"]
-
+      securityContext:
+        privileged: true
