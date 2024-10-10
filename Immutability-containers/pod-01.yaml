@@ -8,4 +8,6 @@ spec:
       image: redhat/ubi9
       command: ["sleep","1h"]
       securityContext:
-        privileged: true
+        privileged: false
+        allowPrivilegeEscalation: false
+
