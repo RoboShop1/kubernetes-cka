@@ -7,11 +7,8 @@ spec:
     runAsNonRoot: true
   containers:
     - name: c1
-      image: chaitu1812/sudo-user
+      image: chaitu1812/sudo-user:101
       command: ["sleep","1h"]
-      securityContext:
-        capabilities:
-          add: ["NET_ADMIN","SYS_TIME" ]
 
 
 
