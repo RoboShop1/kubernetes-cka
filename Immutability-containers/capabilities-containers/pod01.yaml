@@ -8,7 +8,6 @@ spec:
       image: chaitu1812/netpol-rhel9
       command: ["sleep","1h"]
       securityContext:
-        privileged: true
         capabilities: ["ALL"]
 
 ---
