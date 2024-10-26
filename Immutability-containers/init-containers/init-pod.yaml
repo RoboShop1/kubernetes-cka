@@ -21,7 +21,7 @@ spec:
         - name: c_name
           valueFrom:
             fieldRef:
-              fieldPath: spec.containers.name
+              fieldPath: spec.containers[*].name
         - name: pod_ip
           valueFrom:
             fieldRef:
@@ -38,7 +38,7 @@ spec:
         - name: c_name
           valueFrom:
             fieldRef:
-              fieldPath: spec.containers.name
+              fieldPath: spec.containers[*].name
         - name: pod_ip
           valueFrom:
             fieldRef:
