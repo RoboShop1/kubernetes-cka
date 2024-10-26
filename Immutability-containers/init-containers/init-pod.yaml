@@ -17,6 +17,7 @@ spec:
     - name: init1
       image: alpine
       command: ["sh","-c"]
+      restartPolicy: Never
       env:
         - name: pod_ip
           valueFrom:
