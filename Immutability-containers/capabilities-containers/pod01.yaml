@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: chaitu1812/sudo
+      image: chaitu1812/sudo-user
       command: ["sleep","1h"]
 ---
 apiVersion: v1
@@ -15,7 +15,7 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: chaitu1812/sudo
+      image: chaitu1812/sudo-user
       command: ["sleep","1h"]
       securityContext:
         capabilities:
