@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: init-pod
 spec:
+  restartPolicy: Never
   volumes:
     - name: vol
       hostPath:
@@ -17,7 +18,6 @@ spec:
     - name: init1
       image: alpine
       command: ["sh","-c"]
-      restartPolicy: Never
       env:
         - name: pod_ip
           valueFrom:
