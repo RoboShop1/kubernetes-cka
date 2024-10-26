@@ -8,13 +8,13 @@ spec:
       hostPath:
         path: /tmp/vol
   containers:
-    - name: c1
+    - name: nginx
       image: nginx
       volumeMounts:
         - name: vol
           mountPath: /usr/share/nginx/html/
 
-    - name: c1
+    - name: alpine
       image: alpine
       command: ["sh","-c"]
       args:
