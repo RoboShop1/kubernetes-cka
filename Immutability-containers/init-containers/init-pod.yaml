@@ -21,7 +21,7 @@ spec:
         - name: pod_ip
           valueFrom:
             fieldRef:
-              fieldPath: status.podIP/data
+              fieldPath: status.podIP
       args:
         - 'echo "This is init1 - ${pod_ip}" > /data/index.html; sleep 15'
       volumeMounts:
