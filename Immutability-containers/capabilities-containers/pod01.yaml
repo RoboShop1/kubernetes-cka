@@ -9,7 +9,7 @@ spec:
       command: ["sleep","1h"]
       securityContext:
         capabilities:
-          add: [ "NET_ADMIN","SYS_TIME" ]
+          add: [cap "NET_ADMIN","SYS_TIME" ]
 
 ---
 apiVersion: v1
@@ -21,4 +21,7 @@ spec:
     - name: c1
       image: chaitu1812/sudo-user
       command: ["sleep","1h"]
+      securityContext:
+        capabilities:
+           add: ["ALL"]
 
