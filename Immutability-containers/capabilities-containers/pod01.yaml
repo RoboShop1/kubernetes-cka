@@ -9,7 +9,7 @@ spec:
       command: ["sleep","1h"]
       securityContext:
         capabilities:
-          add: [cap "NET_ADMIN","SYS_TIME" ]
+          add: ["NET_ADMIN","SYS_TIME" ]
 
 ---
 apiVersion: v1
@@ -24,4 +24,6 @@ spec:
       securityContext:
         capabilities:
            drop: ["ALL"]
+           add: ["AUDIT_WRITE","AUDIT_READ"]
+
 
