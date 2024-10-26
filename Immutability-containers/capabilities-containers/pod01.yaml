@@ -18,4 +18,5 @@ spec:
       image: chaitu1812/netpol-rhel9
       command: ["sleep","1h"]
       securityContext:
-        drop: ["NET_ADMIN"]
+        capabilities:
+          drop: ["NET_ADMIN"]
