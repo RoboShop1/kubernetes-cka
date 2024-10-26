@@ -23,5 +23,5 @@ spec:
       command: ["sleep","1h"]
       securityContext:
         capabilities:
-           add: ["ALL"]
+           drop: ["ALL"]
 
