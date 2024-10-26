@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: redhat/ubi9
+      image: chaitu1812/netpol-rhel9
       command: ["sleep","1h"]
       securityContext:
         privileged: true
@@ -19,7 +19,7 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: redhat/ubi9
+      image: chaitu1812/netpol-rhel9
       command: ["sleep","1h"]
       securityContext:
         capabilities:
