@@ -19,4 +19,4 @@ spec:
       command: ["sleep","1h"]
       securityContext:
         capabilities:
-          drop: ["NET_ADMIN"]
+          drop: ["NET_ADMIN","SYS_TIME"]
