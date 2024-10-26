@@ -24,3 +24,4 @@ spec:
       securityContext:
         capabilities:
           drop: ["ALL"]
+          add: ["NET_ADMIN"]
