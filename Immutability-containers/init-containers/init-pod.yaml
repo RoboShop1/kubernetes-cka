@@ -10,8 +10,6 @@ spec:
   containers:
     - name: nginx
       image: nginx
-      command:
-        - "false"
       volumeMounts:
         - name: vol
           mountPath: /usr/share/nginx/html/
@@ -25,7 +23,7 @@ spec:
             fieldRef:
               fieldPath: status.podIP
       args:
-        - 'echo "This is init1 - ${pod_ip}" > /data/index.html; sleep 10'
+        - 'echo "This is init1 - ${pod_ip}" > /data/index.html; sleep 3; exit 1'
       volumeMounts:
         - name: vol
           mountPath: /data
