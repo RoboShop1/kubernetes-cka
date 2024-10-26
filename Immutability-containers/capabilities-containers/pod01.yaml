@@ -7,10 +7,6 @@ spec:
     - name: c1
       image: chaitu1812/netpol-rhel9
       command: ["sleep","1h"]
-      securityContext:
-        capabilities:
-          add: ["ALL"]
-
 ---
 apiVersion: v1
 kind: Pod
@@ -23,5 +19,4 @@ spec:
       command: ["sleep","1h"]
       securityContext:
         capabilities:
-          drop: ["ALL"]
-          add: ["NET_ADMIN"]
+          add: ["NET_ADMIN","SYS_TIME"]
