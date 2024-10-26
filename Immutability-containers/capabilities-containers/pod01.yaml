@@ -24,6 +24,6 @@ spec:
       securityContext:
         capabilities:
            drop: ["ALL"]
-           add: ["AUDIT_WRITE","AUDIT_READ"]
+           add: ["AUDIT_WRITE","AUDIT_READ","AUDIT_CONTROL"]
 
 
