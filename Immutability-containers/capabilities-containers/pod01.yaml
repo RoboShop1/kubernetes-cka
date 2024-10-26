@@ -9,6 +9,8 @@ spec:
       command: ["sleep","1h"]
       securityContext:
         privileged: true
+        capabilities: ["ALL"]
+
 ---
 apiVersion: v1
 kind: Pod
