@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: pod01
 spec:
+  securityContext:
+    runAsNonRoot: true
   containers:
     - name: c1
       image: chaitu1812/sudo-user
@@ -11,19 +13,6 @@ spec:
         capabilities:
           add: ["NET_ADMIN","SYS_TIME" ]
 
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod02
-spec:
-  containers:
-    - name: c1
-      image: chaitu1812/sudo-user
-      command: ["sleep","1h"]
-      securityContext:
-        capabilities:
-           drop: ["ALL"]
-           add: ["AUDIT_WRITE","AUDIT_READ","AUDIT_CONTROL","CAP_SETUID"]
+
 
 
