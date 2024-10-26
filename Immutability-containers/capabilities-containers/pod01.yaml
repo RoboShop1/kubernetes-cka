@@ -21,6 +21,4 @@ spec:
     - name: c1
       image: chaitu1812/sudo-user
       command: ["sleep","1h"]
-      securityContext:
-        capabilities:
-          drop: ["NET_ADMIN","SYS_TIME"]
+
