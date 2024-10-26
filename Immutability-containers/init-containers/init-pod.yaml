@@ -20,8 +20,9 @@ spec:
       env:
         - name: c_name
           valueFrom:
-            fieldRef:
-              fieldPath: spec.containers[0].name
+            resourceFieldRef:
+              containerName: c_init2
+              resource: spec.containers[*].name
         - name: pod_ip
           valueFrom:
             fieldRef:
@@ -37,8 +38,9 @@ spec:
       env:
         - name: c_name
           valueFrom:
-            fieldRef:
-              fieldPath: spec.containers[1].name
+            resourceFieldRef:
+              containerName: c_init2
+              resource: spec.containers[*].name
         - name: pod_ip
           valueFrom:
             fieldRef:
