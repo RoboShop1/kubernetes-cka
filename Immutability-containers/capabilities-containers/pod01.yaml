@@ -17,7 +17,4 @@ spec:
     - name: c1
       image: chaitu1812/netpol-rhel9
       command: ["sleep","1h"]
-      securityContext:
-        capabilities:
-          add: ["NET_ADMIN","SYS_TIME"]
-          drop: ["ALL"]
+
