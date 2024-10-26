@@ -18,17 +18,12 @@ spec:
       image: alpine
       command: ["sh","-c"]
       env:
-        - name: c_name
-          valueFrom:
-            resourceFieldRef:
-              containerName: c_init2
-              resource: spec.containers[*].name
         - name: pod_ip
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
       args:
-        - 'while true; do echo "This is ${c_name} - ${pod_ip}" > /data/index.html; sleep 15; done'
+        - 'while true; do echo "This is init1 - ${pod_ip}" > /data/index.html; sleep 15; done'
       volumeMounts:
         - name: vol
           mountPath: /data
@@ -36,17 +31,12 @@ spec:
       image: alpine
       command: [ "sh","-c" ]
       env:
-        - name: c_name
-          valueFrom:
-            resourceFieldRef:
-              containerName: c_init2
-              resource: spec.containers[*].name
         - name: pod_ip
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
       args:
-        - 'while true; do echo "This is ${c_name} - ${pod_ip}" >> /data/index.html; sleep 15; done'
+        - 'while true; do echo "This is init2 - ${pod_ip}" >> /data/index.html; sleep 15; done'
       volumeMounts:
         - name: vol
           mountPath: /data
