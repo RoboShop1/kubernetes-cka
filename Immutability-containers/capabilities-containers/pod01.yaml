@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod01
+spec:
+  containers:
+    - name: c1
+      image: redhat/ubi9
+      command: ["sleep","1h"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod02
+spec:
+  containers:
+    - name: c1
+      image: redhat/ubi9
+      command: ["sleep","1h"]
+      securityContext:
+        capabilities:
+          drop: ["ALL"]
