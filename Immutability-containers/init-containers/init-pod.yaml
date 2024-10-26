@@ -21,9 +21,9 @@ spec:
         - name: pod_ip
           valueFrom:
             fieldRef:
-              fieldPath: status.podIP
+              fieldPath: status.podIP/data
       args:
-        - 'while true; do echo "This is init1 - ${pod_ip}" > /data/index.html; sleep 15; done'
+        - 'echo "This is init1 - ${pod_ip}" > /data/index.html; sleep 15'
       volumeMounts:
         - name: vol
           mountPath: /data
@@ -36,7 +36,7 @@ spec:
             fieldRef:
               fieldPath: status.podIP
       args:
-        - 'while true; do echo "This is init2 - ${pod_ip}" >> /data/index.html; sleep 15; done'
+        - 'echo "This is init1 - ${pod_ip}" > /data/index.html; sleep 15'
       volumeMounts:
         - name: vol
           mountPath: /data
