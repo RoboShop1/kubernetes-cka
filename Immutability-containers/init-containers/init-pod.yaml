@@ -11,7 +11,7 @@ spec:
     - name: nginx
       image: nginx
       command:
-        - false
+        - "false"
       volumeMounts:
         - name: vol
           mountPath: /usr/share/nginx/html/
