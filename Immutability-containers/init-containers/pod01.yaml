@@ -5,7 +5,8 @@ metadata:
 spec:
   volumes:
     - name: vol
-      hostPath: /tmp/vol
+      hostPath:
+        path: /tmp/vol
   containers:
     - name: c1
       image: nginx
