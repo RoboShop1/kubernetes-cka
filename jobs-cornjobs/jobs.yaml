@@ -9,4 +9,4 @@ spec:
         - name: pi
           image: alpine
           command: ["sleep","10"]
-      restartPolicy: Never
+      restartPolicy: OnFailure
