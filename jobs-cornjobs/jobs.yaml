@@ -3,12 +3,12 @@ kind: Job
 metadata:
   name: pi
 spec:
-  completions: 2
-  backoffLimit: 2
+  backoffLimit: 4
+  activeDeadlineSeconds: 30
   template:
     spec:
       containers:
         - name: pi
           image: alpine
-          command: ["sh","-c","sleep 10"]
+          command: ["sh","-c","sleep 10 && false"]
       restartPolicy: OnFailure
