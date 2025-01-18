@@ -19,6 +19,6 @@ spec:
               command:
                 - "/bin/sh"
                 - "-c"
-                - "sleep 80 & exit 1"
+                - "sleep 80s & exit 1"
           restartPolicy: Never
 
