@@ -15,5 +15,5 @@ spec:
             - "-c"
             - "sleep 5s && exit 1"
       restartPolicy: Never
-  backoffLimit: 2
+  backoffLimit: 4
 
