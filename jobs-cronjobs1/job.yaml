@@ -4,7 +4,7 @@ metadata:
   name: pi
 spec:
   completions: 2
-  activeDeadlineSeconds: 10
+  activeDeadlineSeconds: 15
   template:
     spec:
       containers:
@@ -13,7 +13,7 @@ spec:
           command:
             - "sh"
             - "-c"
-            - "sleep 50s"
+            - "sleep 5s && exit 1"
       restartPolicy: Never
   backoffLimit: 1
 
