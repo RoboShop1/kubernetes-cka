@@ -3,9 +3,7 @@ kind: Job
 metadata:
   name: pi
 spec:
-  ttlSecondsAfterFinished: 10
-  completions: 5
-  activeDeadlineSeconds: 5
+  completions: 2
   template:
     spec:
       containers:
@@ -16,5 +14,5 @@ spec:
             - "-c"
             - "sleep 50s"
       restartPolicy: Never
-  backoffLimit: 4
+  backoffLimit: 1
 
