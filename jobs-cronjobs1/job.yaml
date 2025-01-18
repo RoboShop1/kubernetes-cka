@@ -4,6 +4,7 @@ metadata:
   name: pi
 spec:
   ttlSecondsAfterFinished: 40
+  completions: 2
   template:
     spec:
       containers:
