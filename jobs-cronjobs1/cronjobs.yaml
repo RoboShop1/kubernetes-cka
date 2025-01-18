@@ -8,17 +8,15 @@ spec:
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
-
       backoffLimit: 1
       template:
         spec:
           containers:
             - name: hello
               image: alpine
-              imagePullPolicy: IfNotPresent
               command:
-                - "/bin/sh"
+                - "sh"
                 - "-c"
-                - "sleep 80s & exit 1"
+                - "sleep 20s && exit 1"
           restartPolicy: Never
 
