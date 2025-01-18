@@ -12,7 +12,7 @@ spec:
           command:
             - "sh"
             - "-c"
-            - "sleep 10s"
+            - "sleep 40s"
       restartPolicy: Never
   backoffLimit: 1
 
