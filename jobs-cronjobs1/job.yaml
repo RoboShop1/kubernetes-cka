@@ -4,7 +4,7 @@ metadata:
   name: pi
 spec:
   completions: 2
-  activeDeadlineSeconds: 15
+  activeDeadlineSeconds: 30
   template:
     spec:
       containers:
