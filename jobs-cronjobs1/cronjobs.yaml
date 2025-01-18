@@ -6,8 +6,8 @@ spec:
   schedule: "* * * * *"
   jobTemplate:
     spec:
+      backoffLimit: 1
       template:
-        backoffLimit: 1
         spec:
           containers:
             - name: hello
