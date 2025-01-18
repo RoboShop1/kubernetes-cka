@@ -4,7 +4,7 @@ metadata:
   name: pi
 spec:
   ttlSecondsAfterFinished: 10
-  completions: 2
+  completions: 5
   activeDeadlineSeconds: 10
   template:
     spec:
