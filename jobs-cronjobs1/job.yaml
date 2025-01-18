@@ -5,7 +5,7 @@ metadata:
 spec:
   completions: 2
   activeDeadlineSeconds: 30
-  ttlSecondsAfterFinished:
+  ttlSecondsAfterFinished: 10
   template:
     spec:
       containers:
