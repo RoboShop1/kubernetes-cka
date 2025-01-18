@@ -9,7 +9,8 @@ spec:
       containers:
         - name: pi
           image: alpine
-          command: ["sleep","15s","&","exit 1"]
+          command: |
+            - sleep 10s && exit 1
       restartPolicy: Never
   backoffLimit: 1
 
