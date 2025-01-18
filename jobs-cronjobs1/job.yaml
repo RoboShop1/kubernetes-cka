@@ -10,6 +10,8 @@ spec:
         - name: pi
           image: alpine
           command:
+            - "sh"
+            - "-c"
             - "sleep 10s"
       restartPolicy: Never
   backoffLimit: 1
