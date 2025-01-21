@@ -6,4 +6,5 @@ spec:
   serviceAccountName: dev-sa
   containers:
     - name: sample-container
-      image: nginx
+      image: chaitu1812/aws-cli
+      command: ["sleep","10000000s"]
