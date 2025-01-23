@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: true
 spec:
-  nodeName: ip-172-31-86-234.ec2.internal
+  nodeName: "ip-172-31-86-234.ec2.internal"
   volumes:
     - name: sample
       hostPath:
