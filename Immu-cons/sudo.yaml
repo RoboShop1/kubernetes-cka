@@ -11,6 +11,9 @@ spec:
           capabilities:
             drop:
               - ALL
+            add:
+              - SETUID     # Add capability to change user IDs
+              - SETGID
 
 
 
