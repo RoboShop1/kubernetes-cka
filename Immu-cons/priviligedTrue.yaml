@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample
+spec:
+  containers:
+    - name: c1
+      image: redhat/ubi9
+      command: ["sleep","1000000000s"]
+      securityContext:
+        privileged: true
