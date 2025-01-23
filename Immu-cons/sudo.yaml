@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "true"
+  name: sudo
 spec:
   containers:
     - name: c1
