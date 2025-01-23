@@ -8,6 +8,9 @@ spec:
       image: chaitu1812/sudo
       command: ["sleep","1000000000s"]
       securityContext:
-        runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+
 
 
