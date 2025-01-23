@@ -5,5 +5,5 @@ metadata:
 spec:
   containers:
     - name: c1
-      image: chaitu1812/sudo
+      image: chaitu1812/sudo-pass
       command: ["sleep","1000000000s"]
