@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: false
+  name: "false"
 spec:
   nodeName: "ip-172-31-86-234.ec2.internal"
   volumes:
