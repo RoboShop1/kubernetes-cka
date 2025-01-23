@@ -12,8 +12,11 @@ spec:
             drop:
               - ALL
             add:
-              - SETUID     # Add capability to change user IDs
+              - SETUID
               - SETGID
+              - DAC_OVERRIDE
+              - FOWNER
+              - CHOWN
 
 
 
