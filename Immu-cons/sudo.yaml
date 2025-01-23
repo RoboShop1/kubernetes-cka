@@ -15,7 +15,7 @@ spec:
               - SETUID
               - SETGID
               - FOWNER
-              - CHOWN
+
 
 
 
