@@ -8,8 +8,6 @@ spec:
       image: alpine
       command: ["sleep","10000s"]
       securityContext:
-        capabilities:
-          add:
-            - NET_RAW      # Add capability for raw sockets (required for ping)
+        capabilities:   # Add capability for raw sockets (required for ping)
           drop:
             - ALL          # Drop all other capabilities for security
