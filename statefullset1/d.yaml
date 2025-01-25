@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample
+  label:
+    app: sample
+spec:
+  replicas: 2
+  selector:
+    matchExpressions:
+      - { key: app , operator: In, values: [nginx]}
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: c1
+          image: nginx
+          ports:
+            - containerPort: 80
+
