@@ -21,9 +21,10 @@ spec:
           cpu: 150m
           memory: 200Mi
       securityContext:
-        runAsUser: 10000
+        runAsUser: 10002
         runAsGroup: 10001
         readOnlyRootFilesystem: true
+        runAsNonRoot: true
         capabilities:
           drop:
             - ALL
