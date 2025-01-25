@@ -7,8 +7,3 @@ spec:
   containers:
     - name: main
       image: chaitu1812/crash-loop
-      resources:
-        requests:
-          cpu: 3
-        limits:
-          cpu: 4
