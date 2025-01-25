@@ -35,7 +35,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: normal
+  name: headless
 spec:
   selector:
     app: sample
