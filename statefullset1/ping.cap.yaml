@@ -5,9 +5,9 @@ metadata:
 spec:
   containers:
     - name: ping-container
-      image: alpine
+      image: redhat/ubi9
       command: ["sleep","10000s"]
       securityContext:
-        capabilities:   # Add capability for raw sockets (required for ping)
-          drop:
-            - ALL          # Drop all other capabilities for security
+        capabilities:
+          add:
+            - SYS_TIME
