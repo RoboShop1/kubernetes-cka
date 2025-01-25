@@ -11,3 +11,5 @@ spec:
         capabilities:
           add:
             - SYS_TIME
+          drop:
+            - NET_RAW
