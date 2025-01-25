@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: ping-container
-      image: redhat/ubi8
+      image: alpine
       command: ["sleep","10000s"]
       securityContext:
         capabilities:
