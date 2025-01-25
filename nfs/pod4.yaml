@@ -5,9 +5,24 @@ metadata:
     run: pod2
   name: pod2
 spec:
+  automountServiceAccountToken: false
   containers:
     - command:
         - sleep
         - "1000"
       image: chaitu1812/kubectl-cli
       name: pod2
+      resources:
+        requests:
+          cpu: 100m
+          memory: 125Mi
+        limits:
+          cpu: 150m
+          memory: 200Mi
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 10001
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop:
+            - ALL
