@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+spec:
+  shareProcessNamespace: true
+  containers:
+    - name: chaitu1812/crash-loop
+      image: nginx
