@@ -11,7 +11,7 @@ metadata:
   name: nfs-provisioner-clusterRole
 rules:
   - apiGroups: [""] # rules on persistentvolumes
-    resources: ["persistentvolumes"]
+    resources: ["persistentvolumes","nodes"]
     verbs: ["get", "list", "watch", "create", "delete"]
   - apiGroups: [""]
     resources: ["persistentvolumeclaims"]
