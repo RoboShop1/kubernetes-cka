@@ -5,6 +5,7 @@ metadata:
   namespace: sample
   labels:
     app: my-app
+    version: v1
 spec:
   containers:
     - name: my-container
