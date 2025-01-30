@@ -3,9 +3,6 @@ kind: Pod
 metadata:
   name: debug1
   namespace: sample
-  labels:
-    app: my-app
-    version: v1
 spec:
   containers:
     - name: debug1
