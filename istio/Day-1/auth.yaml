@@ -23,6 +23,9 @@ spec:
       app: my-app
   action: ALLOW
   rules:
-    - to:
+    - from:
+        - source:
+            principals: ["cluster.local/ns/sample/sa/example1"]
+      to:
         - operation:
             methods: ["GET"]
