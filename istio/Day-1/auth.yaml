@@ -12,28 +12,22 @@ spec:
     - from:
         - source:
             notPrincipals: ["cluster.local/ns/sample/sa/example1"]
+
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-get-only
+  namespace: sample
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            principals: ["cluster.local/ns/sample/sa/example1"]
       to:
         - operation:
-            methods: ["DELETE"]
-    - {}
-
-
-
-#---
-#apiVersion: security.istio.io/v1beta1
-#kind: AuthorizationPolicy
-#metadata:
-#  name: allow-get-only
-#  namespace: sample
-#spec:
-#  selector:
-#    matchLabels:
-#      app: my-app
-#  action: ALLOW
-#  rules:
-#    - from:
-#        - source:
-#            principals: ["cluster.local/ns/sample/sa/example1"]
-#      to:
-#        - operation:
-#            methods: ["GET"]
+            methods: ["GET","PATCH"]
