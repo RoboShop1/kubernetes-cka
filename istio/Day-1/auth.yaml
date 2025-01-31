@@ -9,4 +9,6 @@ spec:
       app: my-app
   action: DENY
   rules:
-    - {}
+    - to:
+        - operation:
+            methods: ["GET"]
