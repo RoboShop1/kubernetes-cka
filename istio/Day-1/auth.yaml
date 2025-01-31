@@ -14,7 +14,7 @@ spec:
             notPrincipals: ["cluster.local/ns/sample/sa/example1"]
       to:
         - operation:
-            methods: ["*"]
+            methods: ["DELETE"]
 
 
 ---
