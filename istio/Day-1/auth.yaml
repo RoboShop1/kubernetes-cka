@@ -8,8 +8,7 @@ spec:
     matchLabels:
       app: my-app
   action: DENY
-  rules:
-    - {}
+
 
 ---
 apiVersion: security.istio.io/v1beta1
