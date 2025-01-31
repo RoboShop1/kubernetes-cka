@@ -8,6 +8,10 @@ spec:
     matchLabels:
       app: my-app
   action: DENY
+  rules:
+    - from:
+        - source:
+            notPrincipals: ["cluster.local/ns/sample/sa/example1"]
 
 
 ---
