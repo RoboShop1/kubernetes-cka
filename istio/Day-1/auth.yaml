@@ -12,6 +12,12 @@ spec:
     - from:
         - source:
             notPrincipals: ["cluster.local/ns/sample/sa/example1"]
+    - from:
+        - source:
+            principals: ["cluster.local/ns/sample/sa/example1"]
+      to:
+        - operation:
+            methods: ["PATCH"]
 
 ---
 apiVersion: security.istio.io/v1beta1
