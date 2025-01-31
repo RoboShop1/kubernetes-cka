@@ -18,6 +18,9 @@ metadata:
   name: allow-get-only
   namespace: sample
 spec:
+  selector:
+    matchLabels:
+      app: my-app
   rules:
     - to:
         - operation:
