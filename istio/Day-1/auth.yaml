@@ -9,4 +9,4 @@ spec:
       app: my-app
   action: DENY
   rules:
-    -{}
+    - {}
