@@ -28,3 +28,53 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+
+
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: sample1
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  action: DENY
+  rules:
+    - to:
+        - operation:
+            methods: ["GET"]
+
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: sample2
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  action: DENY
+  rules:
+    - to:
+        - operation:
+            methods: ["POST", "DELETE"]
+
+
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: demo
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  action: DENY
+  rules:
+    - to:
+        - operation:
+            methods: ["GET"]
