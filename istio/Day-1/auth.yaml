@@ -9,6 +9,16 @@ spec:
       app: my-app
   action: DENY
   rules:
+    - {}
+
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-get-only
+  namespace: sample
+spec:
+  rules:
     - to:
         - operation:
-            methods: ["GET","DELETE"]
+            methods: ["GET"]
