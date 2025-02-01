@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - nginx-svc.sample.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: nginx-svc.sample.svc.cluster.local
+            subset: v1
+          weight: 90
+        - destination:
+            host: nginx-svc.sample.svc.cluster.local
+            subset: v2
+          weight: 10
