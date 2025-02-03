@@ -1,7 +1,19 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+data:
+  secret-id:
+
+
+---
+
+
 apiVersion: external-secrets.io/v1beta1
-kind: ClusterSecretStore
+kind: SecretStore
 metadata:
   name: vault-backend
+  namespace: example
 spec:
   provider:
     vault:
@@ -9,13 +21,8 @@ spec:
       path: "devops"
       version: "v2"
       auth:
-        tokenSecretRef:
-          name: "vault-token"
-          key: "token"
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: vault-token
-data:
-  token:
+        appRole:
+          roleId: "fbcebb50-1ce1-15f7-c203-be64267156ed"
+          secretRef:
+            name: "my-secret"
+            key: "secret-id"
