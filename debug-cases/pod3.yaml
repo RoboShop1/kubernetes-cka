@@ -27,4 +27,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: my-secret
-              key: password1
+              key: password
+      volumeMounts:
+        - name: secret-volume
+          mountPath: /etc/secrets
+          readOnly: true
+  volumes:
+      - name: secret-volume
+        secret:
+          secretName: my-secret1
