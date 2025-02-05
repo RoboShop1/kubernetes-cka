@@ -4,12 +4,6 @@ metadata:
   name: tom
 spec:
   containers:
-    - name: tmocat
-      image: tomcat:9.0.98-jre8
-      resources:
-        requests:
-          cpu: 50m
-          memory: 56Mi
-        limits:
-          cpu: 100m
-          memory: 100Mi
+    - name: tomcat
+      image: alpine
+      command: ["sleep 1000s"]
