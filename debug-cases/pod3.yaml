@@ -21,10 +21,10 @@ spec:
         - name: SECRET_USERNAME
           valueFrom:
             secretKeyRef:
-              name: my-secret1
+              name: my-secret
               key: username
         - name: SECRET_PASSWORD
           valueFrom:
             secretKeyRef:
               name: my-secret
-              key: password
+              key: password1
