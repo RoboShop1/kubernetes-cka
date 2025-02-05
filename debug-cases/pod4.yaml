@@ -4,7 +4,12 @@ metadata:
   name: tom
 spec:
   containers:
-    - name: tmocat
+    - name: c1
+      image: alpine
+      command: ["/bin/sh","-c"]
+      args:
+        - "echo 'This is chaithanya' > /name && sleep 10000s"
+    - name: c1
       image: alpine
       command: ["/bin/sh","-c"]
       args:
