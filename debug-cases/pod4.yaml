@@ -14,5 +14,7 @@ spec:
       command: ["/bin/sh","-c"]
       args:
         - "echo 'This is chaithanya' > /name && sleep 10000s"
+      securityContext:
+        readOnlyRootFilesystem: true
 
 
