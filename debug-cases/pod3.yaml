@@ -28,3 +28,12 @@ spec:
             secretKeyRef:
               name: my-secret
               key: password1
+      volumeMounts:
+        - name: secret-volume1
+          mountPath: /etc/secrets
+          readOnly: true
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: my-secret
+
