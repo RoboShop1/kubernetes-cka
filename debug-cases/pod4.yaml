@@ -8,7 +8,6 @@ spec:
       image: alpine
       command: ["/bin/sh","-c"]
       args:
-        - "echo 'This is chaithanya' > /name"
-      securityContext:
-        readOnlyRootFilesystem: true
+        - "echo 'This is chaithanya' > /name && sleep 10000s"
+
 
