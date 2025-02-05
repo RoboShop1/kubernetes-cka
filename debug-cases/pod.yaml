@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oom
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      resources:
+        requests:
+          cpu: 50mm
+          memory: 10Mi
+        limits:
+          cpu: 100mm
+          memory: 10Mi
