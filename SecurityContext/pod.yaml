@@ -9,4 +9,16 @@ spec:
       image: chaitu1812/sudo-user
       command: ["sleep" ,"1000s"]
       securityContext:
+       allowPrivilegeEscalation: true
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tom2
+spec:
+  containers:
+    - name: tomcat
+      image: chaitu1812/sudo-user
+      command: ["sleep" ,"1000s"]
+      securityContext:
         allowPrivilegeEscalation: false
