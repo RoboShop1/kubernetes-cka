@@ -3,14 +3,20 @@ kind: Pod
 metadata:
   name: sidecar-container-pod
 spec:
+  volumes:
+    - name: my-emptydir
+      emptyDir: {}
   containers:
     - name: sidecar-setup-container
       image: alpine
-      command: ["sh", "-c", "echo 'Setting up'; sleep 20; echo 'Done setup'"]
+      command: ["sh", "-c", "echo 'Setting up' >> /data/1.txt ; sleep 20; echo 'Done setup'"]
+      volumeMounts:
+        - mountPath: /data
+          name: my-emptydir
       lifecycle:
         postStart:
           exec:
-            command: ["sh", "-c", "echo 'Sidecar started---------------------' ; sleep 20"]
+            command: ["sh", "-c", "echo 'Sidecar started---------------------'>> /data/1.txt"]
         preStop:
           exec:
-            command: ["sh", "-c", "echo 'Cleaning up before termination------------';sleep 20"]
+            command: ["sh", "-c", "echo 'Cleaning up before termination------------' >> /data/1.txt"]
