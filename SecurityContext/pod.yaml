@@ -24,3 +24,16 @@ spec:
         capabilities:
           drop:
             - NET_RAW
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tom3
+spec:
+  containers:
+    - name: tomcat
+      image: chaitu1812/sudo-user
+      command: ["sleep" ,"1000s"]
+      securityContext:
+        privileged: true
