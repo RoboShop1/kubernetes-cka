@@ -9,7 +9,7 @@ spec:
   containers:
     - name: sidecar-setup-container
       image: alpine
-      command: ["sh", "-c", "echo 'Setting up' >> /data/1.txt ; sleep 20; echo 'Done setup'"]
+      command: ["sh", "-c", "echo 'Setting up'; sleep 20; echo 'Done setup'"]
       volumeMounts:
         - mountPath: /data
           name: my-emptydir
