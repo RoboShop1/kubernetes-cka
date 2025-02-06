@@ -4,15 +4,13 @@ metadata:
   name: sidecar-container-pod
 spec:
   containers:
-    - name: main-container
-      image: nginx
     - name: sidecar-setup-container
       image: alpine
-      command: ["sh", "-c", "echo 'Setting up'; sleep 10; echo 'Done setup'"]
+      command: ["sh", "-c", "echo 'Setting up'; sleep 20; echo 'Done setup'"]
       lifecycle:
         postStart:
           exec:
-            command: ["sh", "-c", "echo 'Sidecar started'"]
+            command: ["sh", "-c", "echo 'Sidecar started---------------------'"]
         preStop:
           exec:
-            command: ["sh", "-c", "echo 'Cleaning up before termination'"]
+            command: ["sh", "-c", "echo 'Cleaning up before termination------------'"]
