@@ -20,3 +20,6 @@ spec:
           image: nginx:1.21.6
           ports:
             - containerPort: 80
+          env:
+            - name: NAME
+              value: Chaitu
