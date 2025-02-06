@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tom
+  name: tom1
 spec:
   containers:
     - name: tomcat
