@@ -21,4 +21,6 @@ spec:
       image: chaitu1812/sudo-user
       command: ["sleep" ,"1000s"]
       securityContext:
-        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - NET_RAW
