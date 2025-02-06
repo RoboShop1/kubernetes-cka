@@ -9,14 +9,14 @@ spec:
   containers:
     - name: sidecar-setup-container
       image: alpine
-      command: ["sh", "-c", "echo 'Setting up'; sleep 20; echo 'Done setup'"]
+      command: ["sh", "-c", "echo 'Setting up'; sleep 40; echo 'Done setup'"]
       volumeMounts:
         - mountPath: /data
           name: my-emptydir
       lifecycle:
         postStart:
           exec:
-            command: ["sh", "-c", "sleep 50"]
+            command: ["sh", "-c", "echo 'Cleaning up before termination------------' >> /data/1.txt"]
         preStop:
           exec:
-            command: ["sh", "-c", "echo 'Cleaning up before termination------------' >> /data/1.txt"]
+            command: ["sh", "-c", "echo 'Cleaning up before termination------------' >> /data/2.txt"]
