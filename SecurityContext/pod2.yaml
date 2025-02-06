@@ -4,7 +4,7 @@ metadata:
   name: sample
 spec:
   initContainers:
-    - name: tomcat1
+    - name: init
       image: alpine
       command: ["sleep" ,"40s"]
 
