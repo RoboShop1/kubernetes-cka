@@ -8,5 +8,5 @@ spec:
     - name: tomcat
       image: chaitu1812/sudo-user
       command: ["sleep" ,"1000s"]
-#      securityContext:
-#        readOnlyRootFilesystem: true
+      securityContext:
+        allowPrivilegeEscalation: true
