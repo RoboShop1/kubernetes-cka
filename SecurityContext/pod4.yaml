@@ -10,7 +10,7 @@ spec:
       lifecycle:
         postStart:
           exec:
-            command: ["sh", "-c", "echo 'Sidecar started---------------------'"]
+            command: ["sh", "-c", "echo 'Sidecar started---------------------' ; sleep 20"]
         preStop:
           exec:
-            command: ["sh", "-c", "echo 'Cleaning up before termination------------'"]
+            command: ["sh", "-c", "echo 'Cleaning up before termination------------';sleep 20"]
