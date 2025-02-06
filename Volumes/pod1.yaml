@@ -16,3 +16,7 @@ spec:
     - name: secret-volume
       secret:
         secretName: sample1
+        items:
+          - key: key1
+            path: sample1
+
