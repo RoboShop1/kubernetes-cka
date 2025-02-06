@@ -12,6 +12,8 @@ spec:
         - name: secret-volume
           mountPath: "/tmp/secret-data/sample1"
           subPath: sample1
+        - name: secret-volume
+          mountPath: "/tmp/secret-data/"
 
   volumes:
     - name: secret-volume
