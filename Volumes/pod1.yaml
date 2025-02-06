@@ -10,8 +10,8 @@ spec:
       command: ["sleep","100000s"]
       volumeMounts:
         - name: secret-volume
-          mountPath: "/tmp/secret-data"  # Files will appear here
-          readOnly: true
+          mountPath: "/tmp/secret-data/sample1"
+
   volumes:
     - name: secret-volume
       secret:
