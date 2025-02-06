@@ -6,4 +6,6 @@ spec:
   containers:
     - name: tomcat
       image: alpine
-      command: ["sleep 1000s"]
+      command: ["sleep" ,"1000s"]
+      securityContext:
+        runAsNonRoot: true
