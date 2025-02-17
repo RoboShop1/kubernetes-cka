@@ -21,8 +21,7 @@ metadata:
   namespace: istio
   labels:
     app: my-app
-  annotations:
-    sidecar.istio.io/inject: "false"  # Disables Istio sidecar injection for this pod
+
 spec:
   containers:
     - name: my-app-container
