@@ -12,22 +12,26 @@ spec:
     - from:
         - source:
             notPrincipals: ["cluster.local/ns/istio/sa/ss"]
-
----
-apiVersion: security.istio.io/v1
-kind: AuthorizationPolicy
-metadata:
-  name: allow
-  namespace: istio
-spec:
-  selector:
-    matchLabels:
-      app: nginx
-  action: ALLOW
-  rules:
-    - from:
-        - source:
-            principals: ["cluster.local/ns/istio/sa/ss"]
       to:
         - operation:
-            methods: ["GET","POST","PATCH"]
+            methods: ["GET","POST"]
+
+
+#---
+#apiVersion: security.istio.io/v1
+#kind: AuthorizationPolicy
+#metadata:
+#  name: allow
+#  namespace: istio
+#spec:
+#  selector:
+#    matchLabels:
+#      app: nginx
+#  action: ALLOW
+#  rules:
+#    - from:
+#        - source:
+#            principals: ["cluster.local/ns/istio/sa/ss"]
+#      to:
+#        - operation:
+#            methods: ["GET","POST","PATCH"]
