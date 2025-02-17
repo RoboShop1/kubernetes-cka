@@ -21,7 +21,6 @@ metadata:
   namespace: istio
   labels:
     app: my-app
-
 spec:
   containers:
     - name: my-app-container
