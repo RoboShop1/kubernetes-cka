@@ -11,8 +11,9 @@ spec:
       ports:
         - containerPort: 80
       readinessProbe:
-        tcpSocket:
+        httpGet:
           port: 80
+          path: /index1.html
         initialDelaySeconds:  20
 
 ---
