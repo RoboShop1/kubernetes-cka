@@ -12,9 +12,12 @@ spec:
     - from:
         - source:
             notPrincipals: ["cluster.local/ns/istio/sa/ss"]
+    - from:
+        - source:
+            principals: ["cluster.local/ns/istio/sa/ss"]
       to:
         - operation:
-            methods: ["GET","POST"]
+            methods: ["PATCH","GET"]
 
 
 #---
