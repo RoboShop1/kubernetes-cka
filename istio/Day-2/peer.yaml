@@ -11,8 +11,8 @@ metadata:
 apiVersion: security.istio.io/v1
 kind: PeerAuthentication
 metadata:
-  name: "istio"
-  namespace: "foo"
+  name: "istio-perrauth"
+  namespace: "istio"
 spec:
   mtls:
     mode: STRICT
