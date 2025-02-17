@@ -4,7 +4,6 @@ metadata:
   name: hello
 spec:
   schedule: "*/1 * * * *"
-  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       template:
@@ -16,5 +15,5 @@ spec:
               command:
                 - /bin/sh
                 - -c
-                - sleep 80
+                - sleep 10 && exit 1
           restartPolicy: OnFailure
