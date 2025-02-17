@@ -4,6 +4,9 @@ metadata:
   name: deny-all
   namespace: istio
 spec:
+  selector:
+    matchLabels:
+      app: nginx
   action: DENY
   rules:
     - {}
