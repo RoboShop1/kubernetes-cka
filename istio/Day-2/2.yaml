@@ -1,4 +1,10 @@
 apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ss
+  namespace: istio
+---
+apiVersion: v1
 kind: Pod
 metadata:
   name: noooo
@@ -6,6 +12,7 @@ metadata:
   labels:
     app: my-app
 spec:
+  serviceAccountName: ss
   containers:
     - name: my-app-container
       image: chaitu1812/debug

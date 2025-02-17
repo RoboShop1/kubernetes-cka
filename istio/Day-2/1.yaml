@@ -10,3 +10,22 @@ spec:
   action: DENY
   rules:
     - {}
+
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: allow
+  namespace: istio
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            principals: ["cluster.local/ns/istio/sa/ss"]
+      to:
+        - operation:
+            methods: ["GET","POST"]
