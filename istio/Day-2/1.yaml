@@ -9,7 +9,9 @@ spec:
       app: nginx
   action: DENY
   rules:
-    - {}
+    - from:
+        - source:
+            principals: ["cluster.local/ns/istio/sa/ss"]
 
 ---
 apiVersion: security.istio.io/v1
