@@ -30,4 +30,4 @@ spec:
             principals: ["cluster.local/ns/istio/sa/ss"]
       to:
         - operation:
-            methods: ["GET","POST"]
+            methods: ["GET","POST","PATCH"]
