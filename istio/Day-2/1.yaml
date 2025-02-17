@@ -11,7 +11,7 @@ spec:
   rules:
     - from:
         - source:
-            principals: ["cluster.local/ns/istio/sa/ss"]
+            notPrincipals: ["cluster.local/ns/istio/sa/ss"]
 
 ---
 apiVersion: security.istio.io/v1
