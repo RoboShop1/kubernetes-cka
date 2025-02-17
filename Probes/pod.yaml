@@ -10,6 +10,12 @@ spec:
       image: nginx:latest
       ports:
         - containerPort: 80
+      livenessProbe:
+        exec:
+          command:
+            - cat
+            - /tmp/healthy
+        initialDelaySeconds:  20
 
 ---
 apiVersion: v1
