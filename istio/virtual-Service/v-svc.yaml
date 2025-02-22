@@ -1,19 +1,38 @@
 apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
-  name: reviews
-  namespace: sample
+  name: nginx
+  namespace: dev
 spec:
   hosts:
-    - nginx-svc.sample.svc.cluster.local
-
+    - nginx-service.dev.svc.cluster.local
   http:
     - route:
         - destination:
-            host: nginx-svc.sample.svc.cluster.local
+            host: nginx-service.dev.svc.cluster.local
             subset: v1
           weight: 90
         - destination:
-            host: nginx-svc.sample.svc.cluster.local
+            host: nginx-service.dev.svc.cluster.local
             subset: v2
           weight: 10
+
+---
+
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: nginx-dest
+  namespace: dev
+
+spec:
+  host: nginx-service.dev.svc.cluster.local
+  subsets:
+    - name: v1
+      labels:
+        name: pod1
+        app: nginx
+    - name: v2
+      labels:
+        name: pod2
+        app: nginx
