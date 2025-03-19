@@ -5,6 +5,7 @@ metadata:
   namespace: sample
   labels:
     app: smaple
+    movie: sample
 spec:
   containers:
     - name: c1
