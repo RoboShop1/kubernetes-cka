@@ -1,0 +1,18 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-movie-label
+spec:
+  rules:
+    - name: add-movie-label-if-missing
+      match:
+        resources:
+          kinds:
+            - Pod
+          namespaces:
+            - sample
+      mutate:
+        patchStrategicMerge:
+          metadata:
+            labels:
+              +(movie): "default-movie"
