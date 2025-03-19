@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: label-check
+  namespace: sample
+  labels:
+    app: smaple
+spec:
+  containers:
+    - name: c1
