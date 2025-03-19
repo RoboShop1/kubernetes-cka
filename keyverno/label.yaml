@@ -1,0 +1,20 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: validate-pod-label-movie
+spec:
+  validationFailureAction: Enforce
+  rules:
+    - name: check-movie-label
+      match:
+        resources:
+          kinds:
+            - Pod
+          namespaces:
+            - sample
+      validate:
+        message: "Pod must have a 'movie' label."
+        pattern:
+          metadata:
+            labels:
+              movie: "?*"
