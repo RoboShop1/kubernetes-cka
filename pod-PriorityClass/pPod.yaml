@@ -4,6 +4,7 @@ metadata:
   name: important-pod
 spec:
   priorityClassName: high-priority
+  preemptionPolicy: Never
   containers:
     - name: my-app
       image: nginx
