@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-deploy
+  namespace: sample
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: c1
+          image: nginx
+          resources:
+            requests:
+              cpu: 1
+              memory: 560Mi
+            limits:
+              cpu: 2
+              memory: 1Gi
