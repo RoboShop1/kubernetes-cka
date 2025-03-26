@@ -6,4 +6,4 @@ spec:
   priorityClassName: high-priority
   containers:
     - name: my-app
-      image: my-app:latest
+      image: nginx
