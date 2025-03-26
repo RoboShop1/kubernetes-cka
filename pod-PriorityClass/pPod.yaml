@@ -7,3 +7,10 @@ spec:
   containers:
     - name: my-app
       image: nginx
+      resources:
+        requests:
+          cpu: 1
+          memory: 560Mi
+        limits:
+          cpu: 2
+          memory: 1Gi
