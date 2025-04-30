@@ -12,7 +12,7 @@ spec:
     - host: kiali.chaithanya.cloud
       http:
         paths:
-          - path: /dashboard
+          - path: /
             pathType: Prefix
             backend:
               service:
