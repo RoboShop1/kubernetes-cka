@@ -32,7 +32,7 @@ spec:
       consecutive5xxErrors: 1
       interval: 10s
       baseEjectionTime: 30s
-      maxEjectionPercent: 100
+      maxEjectionPercent: 50
 
 
 #
