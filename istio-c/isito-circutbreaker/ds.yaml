@@ -1,11 +1,12 @@
-apiVersion: networking.istio.io/v1
+apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
-  name: http-ds
-  namespace: test
+  name: nginx-ds
 spec:
   host: my-app-service.test.svc.cluster.local
-  subsets:
-    - name: v1
-      labels:
-        app: my-app
+  trafficPolicy:
+    outlierDetection:
+      consecutive5xxErrors: 2         # Open circuit after 3 consecutive 5xx errors
+      interval: 5s                     # Check every 5 seconds
+      baseEjectionTime: 30s            # Time the circuit remains open (30 seconds)
+      maxEjectionPercent: 100
