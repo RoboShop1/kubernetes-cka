@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kiali-cert
+  namespace: default
+spec:
+  secretName:  kiali-tls
+  issuerRef:
+    name: letsencrypt-dev
+    kind: ClusterIssuer
+  commonName: kiali.chaithanya.cloud
+  dnsNames:
+    - kiali.chaithanya.cloud
