@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: dev-cert
+  namespace: default
+spec:
+  secretName: devtls
+  issuerRef:
+    name: letsencrypt-dev
+    kind: ClusterIssuer
+  commonName: app1.chaithanya.cloud
+  dnsNames:
+    - app1.chaithanya.cloud
+    - app2.chaithanya.cloud
