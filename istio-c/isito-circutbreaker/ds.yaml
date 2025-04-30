@@ -1,0 +1,11 @@
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: http-ds
+  namespace: test
+spec:
+  host: my-app-service.test.svc.cluster.local
+  subsets:
+    - name: v1
+      labels:
+        app: my-app
