@@ -8,3 +8,17 @@ spec:
     - name: c1
       image: chaitu1812/debug
       command: ["sleep","1000000s"]
+
+
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: one2
+  namespace: test
+spec:
+  containers:
+    - name: c1
+      image: chaitu1812/debug
+      command: ["sleep","1000000s"]
