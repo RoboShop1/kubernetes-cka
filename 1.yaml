@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-svc
+  namespace: test-ns
+spec:
+  clusterIP: None
+  ports:
+    - targetPort: 3306
+      port: 3306
+  selector:
+    app: mysql
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+  namespace: test-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mysql
+  serviceName: mysql-svc
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: c1
+          image: mysql
+          ports:
+            - name: mysql-port
+              containerPort: 3306
+              protocol: TCP
+          volumeMounts:
+            - name: mysql-vol
+              mountPath: /var/lib/mysql
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql-vol
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: ""
+        resources:
+          requests:
+            storage: 20Gi
