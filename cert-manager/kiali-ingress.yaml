@@ -7,6 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: letsencrypt-dev
 spec:
+  ingressClassName: nginx
   rules:
     - host: kiali.chaithanya.cloud
       http:
