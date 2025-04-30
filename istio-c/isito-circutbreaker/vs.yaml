@@ -5,7 +5,7 @@ metadata:
   namespace: test
 spec:
   hosts:
-    - nginx
+    - my-app-service.test.svc.cluster.local
   http:
     - fault:
         delay:
