@@ -18,7 +18,18 @@ spec:
                 name: my-app-service
                 port:
                   number: 80
+    - host: app2.chaithanya.cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-app-service
+                port:
+                  number: 80
   tls:
     - hosts:
         - app1.chaithanya.cloud
+        - app2.chaithanya.cloud
       secretName: devtls
